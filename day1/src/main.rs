@@ -10,13 +10,13 @@ fn main() {
 
     for line in lines{
         let char = line.chars().next().unwrap();
-        let mut distance = line[1..].parse::<i32>().unwrap();
+        let distance = line[1..].parse::<i32>().unwrap();
 
         println!("Char: {}, Distance: {}", char, distance);
 
         match char {
             'L' => {
-                for i in 0..distance {
+                for _ in 0..distance {
                     current_position -= 1;
                     if current_position < 0 {
                         current_position = 99;
@@ -28,7 +28,7 @@ fn main() {
             },
             'R' => 
             {
-                for i in 0..distance {
+                for _ in 0..distance {
                     current_position += 1;
                     if current_position > 99 {
                         current_position = 0;
